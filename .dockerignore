@@ -1,0 +1,9 @@
+.vscode
+.dockerignore
+.git
+.gitignore
+.env.example
+node_modules
+Dockerfile*
+LICENSE
+README.md
