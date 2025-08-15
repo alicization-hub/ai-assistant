@@ -1,9 +1,7 @@
 import { z } from 'zod'
 
 export const envSchema = z.object({
-  APP_MODE: z
-    .union([z.literal('production'), z.literal('development'), z.literal('local')])
-    .default('local'),
+  APP_MODE: z.union([z.literal('production'), z.literal('development')]).default('development'),
   APP_NAME: z.string().default('project_name'),
   APP_BASEURL: z.string().default('http://www.example.com'),
   HOSTNAME: z.string().default('localhost'),
@@ -12,7 +10,6 @@ export const envSchema = z.object({
     .string()
     .default('')
     .transform((value) => value.split(',').filter((v) => v.trim() !== '')),
-
   OPENAI_KEY: z.string().default('your-api-key'),
   TZ: z.string().default('Asia/Singapore')
 })

@@ -1,11 +1,11 @@
 import { cacheSchema, dbSchema, envSchema, jwtSchema, redisSchema } from './validator.zod'
 
 export const ENV = envSchema.parse({
-  APP_MODE: process.env.NODE_ENV || process.env.APP_MODE,
+  APP_MODE: process.env.NODE_ENV,
   APP_NAME: process.env.APP_NAME,
   APP_BASEURL: process.env.APP_BASEURL,
-  HOSTNAME: process.env.SERVER_HOSTNAME,
-  PORT: process.env.SERVER_PORT,
+  HOSTNAME: process.env.HOSTNAME,
+  PORT: process.env.PORT,
   CORS: process.env.CORS_WHITELIST,
   OPENAI_KEY: process.env.OPENAI_API_KEY,
   TZ: process.env.TZ
